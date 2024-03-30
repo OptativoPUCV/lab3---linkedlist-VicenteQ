@@ -72,17 +72,12 @@ void *lastList(List *list){
 
 
 void *prevList(List *list) {
-    if (list->head == NULL || list->current == list->head) {
-        list->current = NULL;
-        return NULL;
-    }
+  if (list->head == NULL || list->current == NULL || list->current->prev == NULL) {
+      return NULL;
+  }
 
-    Node *aux = list->head;
-    while (aux->next != NULL && aux->next != list->current) {
-        aux = aux->next;
-    }
-    list->current = aux;
-    return aux->data;
+  list->current = list->current->prev;
+  return list->current->data;
 }
 
 
