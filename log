@@ -1,0 +1,31 @@
+Sat 30 Mar 2024 05:09:25 PM UTC: 
+ list.c | 27 ++++++++++++++++++++++++++-
+ 1 file changed, 26 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘lastList’:
+list.c:60:3: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   60 |   if(list->head == NULL)
+      |   ^~
+list.c:62:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   62 |     return NULL;
+      |     ^~~~~~
+list.c: At top level:
+list.c:64:15: error: ‘list’ undeclared here (not in a function); did you mean ‘List’?
+   64 |   Node *aux = list->head;
+      |               ^~~~
+      |               List
+list.c:65:3: error: expected identifier or ‘(’ before ‘while’
+   65 |   while(aux->next != NULL){
+      |   ^~~~~
+list.c:68:7: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   68 |   list->current = aux;
+      |       ^~
+list.c:69:3: error: expected identifier or ‘(’ before ‘return’
+   69 |   return aux->data;
+      |   ^~~~~~
+list.c:70:1: error: expected identifier or ‘(’ before ‘}’ token
+   70 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+dfe0267
