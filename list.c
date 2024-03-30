@@ -76,13 +76,15 @@ void *prevList(List *list) {
         list->current = NULL;
         return NULL;
     }
+
     Node *aux = list->head;
-    while (aux->next != list->current) {
+    while (aux->next != NULL && aux->next != list->current) {
         aux = aux->next;
     }
     list->current = aux;
     return aux->data;
 }
+
 
 
 void pushFront(List * list, void * data) {
